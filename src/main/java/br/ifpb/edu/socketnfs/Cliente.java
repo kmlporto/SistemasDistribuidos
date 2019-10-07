@@ -1,4 +1,4 @@
-package br.ifpb.edu.kamila;
+package br.ifpb.edu.socketnfs;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
