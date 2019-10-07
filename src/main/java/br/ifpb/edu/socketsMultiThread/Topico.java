@@ -1,5 +1,7 @@
 package br.ifpb.edu.socketsMultiThread;
 
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +29,12 @@ public class Topico {
         return mensagens;
     }
 
-    public void addMensagem(String mensagem) {
+    public void addMensagem(String mensagem) throws IOException {
         this.mensagens.add(mensagem);
+        for(Socket c: subscritores){
+            DataOutputStream dos = new DataOutputStream(c.getOutputStream());
+            dos.writeUTF(mensagem);
+        }
     }
 
     public List<Socket> getSubscritores() {

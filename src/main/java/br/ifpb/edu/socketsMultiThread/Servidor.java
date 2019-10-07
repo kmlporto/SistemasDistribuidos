@@ -15,11 +15,12 @@ public class Servidor {
 
         ServerSocket serverSocket = new ServerSocket(7001);
 
+        MensagensThread mensagensThread = new MensagensThread(serverSocket);
+
         while (true) {
             Socket cliente = serverSocket.accept();
             ClienteThread clienteThread = new ClienteThread(cliente);
             clienteThread.start();
-
         }
 
     }
