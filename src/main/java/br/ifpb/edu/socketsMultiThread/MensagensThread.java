@@ -1,13 +1,11 @@
 package br.ifpb.edu.socketsMultiThread;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.Scanner;
 
-import static br.ifpb.edu.socketsMultiThread.Servidor.*;
+import static br.ifpb.edu.socketsMultiThread.Servidor.getTopico;
+import static br.ifpb.edu.socketsMultiThread.Servidor.isTopico;
 
 public class MensagensThread extends Thread{
     private ServerSocket servidor;
